@@ -13,3 +13,5 @@ ladicka_kloub ----- This is a tuner joint for Ashlon CPT50.
 
 sverka_proteco ---- Repair part - handle for Proteco woodworking clamp TY-201.
 
+anemometr ......... anemometr mozna odolny proti zamrznuti :-)
+
