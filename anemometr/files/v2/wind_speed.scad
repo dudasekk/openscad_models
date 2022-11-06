@@ -20,19 +20,14 @@ module miska () {
  difference() {
     sphere(d=dmiska);
     union () {
-     translate([0,0,-dmiska/2]) cube(size=dmiska, center=true);
-     translate([0,0,-2*stena]) sphere(d=dmiska);
+     translate([0,0,-dmiska/2-0.01]) cube(size=dmiska, center=true);
+     translate([0,0,-4*stena]) sphere(d=dmiska);
     }
  }
 // uchyt
  uchyt_misky();
 }
 
-$fn=120; 
-// miska();
-// translate([0,100,0]) miska();
-// translate([1.5*dmiska,100,0]) miska();
-// translate([3*dmiska,100,0]) miska();
 
 module uchyt_misky() {
    translate([-stena,dmiska/2-stena/2,0]) cube([2*stena,luchyt,2*stena]);
@@ -62,7 +57,20 @@ module venkovninosic() {
      translate([0,0,vnosic-vtycka]) cylinder(h=vtycka,d=dtycka,$fn=120);
 }
 
-// venkovninosic();
+// Vnitrni cast budou dva dute valce horni s uchycenim pro lozisko vnejsi casti
+// Dolni pak bude drzaky sensoru s vnejsi drazkou pro vytapeni
+// Po nasunuti do sebe se budou zajistovat tremi srouby v dolni casti
+module vnitrninosic1() {
+difference() {
+  cylinder(h=vnosic,d=dnosic-3*stena);
+  union() {
+    translate([0,0,2*stena]) cylinder(h=vnosic,d=dnosic-5*stena);
+    translate([(dnosic-5*stena)/4,0,0]) cylinder(h=2*stena, d=4);
+    rotate([0,0,120]) translate([(dnosic-5*stena)/4,0,0]) cylinder(h=2*stena, d=4);
+    rotate([0,0,240])translate([(dnosic-5*stena)/4,0,0]) cylinder(h=2*stena, d=4);
+      }
+  }
+}
 
 module vickonosice() {
     difference() {
@@ -86,4 +94,11 @@ module vickonosice() {
       }  
 }
 
-vickonosice();
+$fn=120; 
+// miska();
+// translate([0,100,0]) miska();
+// translate([1.5*dmiska,100,0]) miska();
+// translate([3*dmiska,100,0]) miska();
+// venkovninosic();
+// vickonosice();
+vnitrninosic1();

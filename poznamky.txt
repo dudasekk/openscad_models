@@ -1,0 +1,2 @@
+$fn = $preview ? 15 : 60; //nahled F5 = 15, renderovani F6 = 60
+
