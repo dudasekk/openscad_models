@@ -62,7 +62,7 @@ module vnejsiprofil() {
       // drazka pro uchycovaci pasek  
       translate([11.5,0,vroh1-3*offset]) cube([4.8,delkavnej,1.3]);  
       // drazky v prostoru tesneni
-      translate([22.2,0,0]) cube([7.0,delkavnej,2.3]);  
+      translate([22.8,0,0]) cube([7.0,delkavnej,2.3]);  
       translate([23.6,0,0]) cube([2.6,delkavnej,3.8]);  
     } // odebirane casti
   } // difference 

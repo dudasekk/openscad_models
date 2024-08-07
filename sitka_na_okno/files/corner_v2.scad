@@ -46,7 +46,7 @@ module centralpart () {
 }  
 
 module vnejsiprofil() {
-  offset=1.3;  
+  offset=1.2;  
   translate([offset,0,offset]) 
    difference() {
     union() { 
@@ -58,18 +58,18 @@ module vnejsiprofil() {
     } // hlavni cast   
     union() {
       // velky vyrez
-      translate([2.0,0,0]) cube([7.8,delkavnej,6.2]);  
+      translate([2.3,0,0]) cube([7.6,delkavnej,6.2]);  
       // drazka pro uchycovaci pasek  
       translate([11.5,0,vroh1-3*offset]) cube([4.8,delkavnej,1.3]);  
       // drazky v prostoru tesneni
-      translate([22.2,0,0]) cube([7.0,delkavnej,2.3]);  
+      translate([22.8,0,0]) cube([7.0,delkavnej,2.3]);  
       translate([23.6,0,0]) cube([2.6,delkavnej,3.8]);  
     } // odebirane casti
   } // difference 
 }
 
 module vnitrniprofil() {
-    offset=2.5;
+    offset=2.4;
     translate([offset,0,offset]) 
     difference() {
     union() { cube([roh1-2*offset,delkavnej,vroh1-2*offset]);  
@@ -80,9 +80,9 @@ module vnitrniprofil() {
             }
     union() {
       // velky vyrez
-      translate([-1.6,0,-1]) cube([11,delkavnej,6]);  
-      translate([5,0,3.8]) rotate([270,0,0]) cylinder(d=7.6,h=delkavnej);  
-      translate([0,-15,3]) cube([4,delkavnej,6]); 
+      translate([0,0,-1]) cube([8.0,delkavnej,6]);  
+      translate([-1,0,-1]) cube([7.6,delkavnej,6]);  
+      translate([3.8,0,3.8]) rotate([270,0,0]) cylinder(d=7.6,h=delkavnej);  
       // drazka pro uchycovaci pasek  
       translate([11.5,0,vroh1-2*offset-1.3]) cube([4.8,delkavnej,1.3]);  
       // vybrani u spicky dva valce d=5 a mezi stredy vzdalenost 2.5 fce hull

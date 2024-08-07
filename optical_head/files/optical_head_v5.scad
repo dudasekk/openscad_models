@@ -18,8 +18,8 @@ vout = dmagout+2*stena;
 module led_holder_lower() {
     difference() {
          union() {
-              cylinder(d=dout,h=stena);
-              translate([0,0,stena]) cylinder(d=dmagin,h=hdrz);
+              cylinder(d=dout,h=stena/4);
+              translate([0,0,stena/4]) cylinder(d=dmagin,h=hdrz);
              }
          union() {
               translate([3.25,0,0]) cylinder(d=5.2,h=hdrz+stena);
